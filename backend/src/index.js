@@ -6,6 +6,7 @@ import { userRouter } from './routes/userroute.js'
 //mongodb+srv://recipe123:Recipe123@recipe.3urezfv.mongodb.net/recipe?retryWrites=true&w=majority
 
 const app = express();
+const PORT=process.env.PORT || 3001
 
 app.get("/",async(req,res)=>{
     const data= await fetch("http://localhost:3001/auth/register");
@@ -25,6 +26,6 @@ mongoose.connect('mongodb+srv://recipe123:Recipe123@recipe.3urezfv.mongodb.net/r
 
 
 
-app.listen(3001, () => {
+app.listen(PORT, () => {
     console.log("connected")
 })
